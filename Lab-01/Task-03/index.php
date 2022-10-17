@@ -1,7 +1,7 @@
 <html>
     <body>
         <form action="index.php" method="get">
-            Enter hryvnia: <input type="number" name="hryvnia">
+            Введіть гривню: <input type="number" name="hryvnia">
             <input type="submit">
         </form>
     </body>
@@ -12,7 +12,7 @@
 $hryvnia = $_GET["hryvnia"];
 if($hryvnia != NULL) {
     $dollar = round($hryvnia / 36.90, 2) ;
-    echo "Result convert to dollar: $dollar";
+    echo "Результат конвертування в долари: $dollar";
 }
-else echo 'Enter value';
+else echo 'Введіть значення!!!';
 ?>
