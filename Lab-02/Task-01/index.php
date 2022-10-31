@@ -46,7 +46,7 @@
             <?php
             $numX = $_GET["numX"];
             $numY = $_GET["numY"];
-            echo '<td>' . pow($numX, $numY) . '</td>';
+            echo '<td>' . powImport(2, -4) . '</td>';
             ?>
         </tr>
     </table>
@@ -64,5 +64,19 @@
 </html>
 
 <?php
+function powImport($num, $exponent)
+{
+    $result = 1;
+    if ($exponent > 0) {
+        $temp = $exponent;
+        while ($temp) {
+            $result *= $num;
+            $temp--;
+        }
+        return $result;
+    } else if ($exponent < 0)  {
+        return 1 / powImport($num, $exponent * -1);
+    } else return 1;
+}
 
 ?>
