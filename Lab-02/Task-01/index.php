@@ -44,7 +44,9 @@
         </tr>
         <tr>
             <?php
-
+            $numX = $_GET["numX"];
+            $numY = $_GET["numY"];
+            echo '<td>' . pow($numX, $numY) . '</td>';
             ?>
         </tr>
     </table>
