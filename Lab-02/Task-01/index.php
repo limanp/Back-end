@@ -1,6 +1,15 @@
 <html>
 <head>
     <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: solid 1px black;
+        }
+        tr:first-child{
+            background-color: yellow;
+        }
         form {
             display: flex;
         }
@@ -14,6 +23,26 @@
 </head>
 <body>
     <form >
+        <table>
+            <tr>
+                <th>x^y</th>
+                <th>x!</th>
+                <th>my_tg(x)</th>
+                <th>sin(x)</th>
+                <th>cos(x)</th>
+                <th>tg(x)</th>
+                <th>x+y</th>
+                <th>x-y</th>
+                <th>x*y</th>
+                <th>x/y</th>
+                <th>average(x,y)</th>
+            </tr>
+            <tr>
+                <?php
+
+                ?>
+            </tr>
+        </table>
         <div>
             <input type="number" name="numX" >
         </div>
@@ -26,3 +55,7 @@
     </form>
 </body>
 </html>
+
+<?php
+
+?>
