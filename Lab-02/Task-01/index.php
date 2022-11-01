@@ -47,6 +47,7 @@
             $numX = $_GET["numX"];
             $numY = $_GET["numY"];
             echo '<td>' . powImport(2, -4) . '</td>';
+            echo '<td>' . factorial(-10) . '</td>';
             ?>
         </tr>
     </table>
@@ -74,9 +75,22 @@ function powImport($num, $exponent)
             $temp--;
         }
         return $result;
-    } else if ($exponent < 0)  {
+    } else if ($exponent < 0) {
         return 1 / powImport($num, $exponent * -1);
     } else return 1;
+}
+
+function factorial($num)
+{
+    if ($num < 0) {
+        return factorial($num * -1) * -1;
+    }
+    $result = 1;
+    while ($num) {
+        $result *= $num;
+        $num--;
+    }
+    return $result;
 }
 
 ?>
