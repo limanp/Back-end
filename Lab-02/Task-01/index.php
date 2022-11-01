@@ -48,7 +48,10 @@
             $numY = $_GET["numY"];
             echo '<td>' . powImport(2, -4) . '</td>';
             echo '<td>' . factorial(-10) . '</td>';
-            echo '<td>' . my_tg(4);
+            echo '<td>' . my_tg(4) . '</td>';
+            echo '<td>' . sin(4) . '</td>';
+            echo '<td>' . cos(4) . '</td>';
+            echo '<td>' . tan(4) . '</td>';
             ?>
         </tr>
     </table>
