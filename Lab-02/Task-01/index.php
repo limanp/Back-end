@@ -46,17 +46,17 @@
             <?php
             $numX = $_GET["numX"];
             $numY = $_GET["numY"];
-            echo '<td>' . powImport($numX, $numY) . '</td>';
-            echo '<td>' . factorial($numX) . '</td>';
-            echo '<td>' . my_tg($numX) . '</td>';
-            echo '<td>' . sin($numX) . '</td>';
-            echo '<td>' . cos($numX) . '</td>';
-            echo '<td>' . tan($numX) . '</td>';
-            echo '<td>' . ($numX + $numY) . '</td>';
-            echo '<td>' . ($numX - $numY) . '</td>';
-            echo '<td>' . ($numX * $numY) . '</td>';
-            echo '<td>' . ($numX / $numY) . '</td>';
-            echo '<td>' . average($numX, $numY) . '</td>';
+            echo('<td>' . powImport($numX, $numY) . '</td>' .
+                '<td>' . factorial($numX) . '</td>' .
+                '<td>' . my_tg($numX) . '</td>' .
+                '<td>' . sin($numX) . '</td>' .
+                '<td>' . cos($numX) . '</td>' .
+                '<td>' . tan($numX) . '</td>' .
+                '<td>' . ($numX + $numY) . '</td>' .
+                '<td>' . ($numX - $numY) . '</td>' .
+                '<td>' . ($numX * $numY) . '</td>' .
+                '<td>' . ($numX / $numY) . '</td>' .
+                '<td>' . average($numX, $numY) . '</td>');
             ?>
         </tr>
     </table>
