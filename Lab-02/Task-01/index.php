@@ -48,6 +48,7 @@
             $numY = $_GET["numY"];
             echo '<td>' . powImport(2, -4) . '</td>';
             echo '<td>' . factorial(-10) . '</td>';
+            echo '<td>' . my_tg(4);
             ?>
         </tr>
     </table>
@@ -92,5 +93,11 @@ function factorial($num)
     }
     return $result;
 }
+
+function my_tg($num)
+{
+    return sin($num) / cos($num);
+}
+
 
 ?>
