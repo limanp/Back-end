@@ -56,6 +56,7 @@
             echo '<td>' . ($numX - $numY) . '</td>';
             echo '<td>' . ($numX * $numY) . '</td>';
             echo '<td>' . ($numX / $numY) . '</td>';
+            echo '<td>' . average($numX, $numY) . '</td>';
             ?>
         </tr>
     </table>
@@ -106,5 +107,9 @@ function my_tg($num)
     return sin($num) / cos($num);
 }
 
+function average($numX, $numY)
+{
+    return ($numX + $numY) / 2;
+}
 
 ?>
