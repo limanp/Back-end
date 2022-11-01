@@ -46,12 +46,16 @@
             <?php
             $numX = $_GET["numX"];
             $numY = $_GET["numY"];
-            echo '<td>' . powImport(2, -4) . '</td>';
-            echo '<td>' . factorial(-10) . '</td>';
-            echo '<td>' . my_tg(4) . '</td>';
-            echo '<td>' . sin(4) . '</td>';
-            echo '<td>' . cos(4) . '</td>';
-            echo '<td>' . tan(4) . '</td>';
+            echo '<td>' . powImport($numX, $numY) . '</td>';
+            echo '<td>' . factorial($numX) . '</td>';
+            echo '<td>' . my_tg($numX) . '</td>';
+            echo '<td>' . sin($numX) . '</td>';
+            echo '<td>' . cos($numX) . '</td>';
+            echo '<td>' . tan($numX) . '</td>';
+            echo '<td>' . ($numX + $numY) . '</td>';
+            echo '<td>' . ($numX - $numY) . '</td>';
+            echo '<td>' . ($numX * $numY) . '</td>';
+            echo '<td>' . ($numX / $numY) . '</td>';
             ?>
         </tr>
     </table>
