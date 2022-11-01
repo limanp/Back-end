@@ -13,16 +13,15 @@
             background-color: yellow;
         }
 
-        form {
-            display: flex;
-        }
-
         input[type="submit"] {
             width: 100px;
         }
 
         input {
             margin: 10px;
+        }
+        h1 {
+            color: red;
         }
     </style>
 </head>
@@ -44,29 +43,28 @@
         </tr>
         <tr>
             <?php
+
             $numX = $_GET["numX"];
             $numY = $_GET["numY"];
-            echo('<td>' . powImport($numX, $numY) . '</td>' .
-                '<td>' . factorial($numX) . '</td>' .
-                '<td>' . my_tg($numX) . '</td>' .
-                '<td>' . sin($numX) . '</td>' .
-                '<td>' . cos($numX) . '</td>' .
-                '<td>' . tan($numX) . '</td>' .
-                '<td>' . ($numX + $numY) . '</td>' .
-                '<td>' . ($numX - $numY) . '</td>' .
-                '<td>' . ($numX * $numY) . '</td>' .
-                '<td>' . ($numX / $numY) . '</td>' .
-                '<td>' . average($numX, $numY) . '</td>');
+
+            if (is_numeric($numX) && is_numeric($numY))
+                echo('<td>' . powImport($numX, $numY) . '</td>' .
+                    '<td>' . factorial($numX) . '</td>' .
+                    '<td>' . my_tg($numX) . '</td>' .
+                    '<td>' . sin($numX) . '</td>' .
+                    '<td>' . cos($numX) . '</td>' .
+                    '<td>' . tan($numX) . '</td>' .
+                    '<td>' . ($numX + $numY) . '</td>' .
+                    '<td>' . ($numX - $numY) . '</td>' .
+                    '<td>' . ($numX * $numY) . '</td>' .
+                    '<td>' . ($numY != 0 ? $numX / $numY : 'На нуль ділити не можна!') . '</td>' .
+                    '<td>' . average($numX, $numY) . '</td>');
             ?>
         </tr>
     </table>
     <div>
         <input type="number" name="numX">
-    </div>
-    <div>
         <input type="number" name="numY">
-    </div>
-    <div>
         <input type="submit" value="=">
     </div>
 </form>
