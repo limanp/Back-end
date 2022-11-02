@@ -26,6 +26,13 @@
         h1 {
             color: red;
         }
+        .input {
+            display: flex;
+            margin-top: 20px;
+        }
+        .input > div > div {
+            padding-left: 100px;
+        }
     </style>
 </head>
 <body>
@@ -64,10 +71,16 @@
             ?>
         </tr>
     </table>
-    <div>
-        <input type="number" name="numX">
-        <input type="number" name="numY">
-        <input type="submit" value="=">
+    <div class="input">
+        <div>
+            <div>x</div>
+            <input type="number" name="numX">
+        </div>
+        <div>
+            <div>y</div>
+            <input type="number" name="numY">
+        </div>
+        <div style="position: relative;"><input style="position: absolute; bottom: 0;" type="submit" value="="></div>
     </div>
 </form>
 </body>
