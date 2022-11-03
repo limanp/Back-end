@@ -1,17 +1,14 @@
 <?php
-
 function nameGeneration($warehouses)
 {
     $sizeName = rand(2, 3);
     $i = 0;
     $name = '';
     while($i < $sizeName) {
-        $randIndex = rand(0, count($warehouses));
+        $randIndex = rand(0, count($warehouses) - 1);
         $name .= $warehouses[$randIndex];
         $i++;
     }
-
-    //echo bin2hex('і');
     return $name;
 }
 
@@ -52,11 +49,9 @@ $warehouses = [
 </head>
 <body>
 <?php
-
 echo "<p><b>Кішка:</b> " . nameGeneration($warehouses) . "</p>";
 echo "<p><b>Собака:</b> " . nameGeneration($warehouses) . "</p>";
 echo "<p><b>Хом'ячок:</b> " . nameGeneration($warehouses) . "</p>";
-
 ?>
 </body>
 </html>
