@@ -1,7 +1,9 @@
 <html>
 <body>
 <?php
-print_r(arrayCreate());
+$arr1 = arrayCreate();
+$arr2 = arrayCreate();
+print_r(arrayEditing($arr1, $arr2));
 ?>
 </body>
 </html>
@@ -19,9 +21,21 @@ function arrayMerge($arr1, $arr2): array
     return $result;
 }
 
+function arrayDeleteRepeatItem($arr): array
+{
+    $result = array();
+    foreach($arr as $value) {
+        if(!in_array($value, $result))
+            $result[] = $value;
+    }
+    return $result;
+}
+
 function arrayEditing($arr1, $arr2): array
 {
     $arrayMerged = arrayMerge($arr1, $arr2);
+    $arrayDelRepeat = arrayDeleteRepeatItem($arrayMerged);
+    return $arrayDelRepeat;
 
 }
 
