@@ -3,6 +3,14 @@
 <?php
 $arr1 = arrayCreate();
 $arr2 = arrayCreate();
+
+echo 'Створені масиви за допомогою функції createArray:<br>';
+print_r($arr1);
+echo '<br>';
+print_r($arr2);
+echo '<br><br>';
+
+echo 'Масив після злиття, видалення повторень та сортировки:<br>';
 print_r(arrayEditing($arr1, $arr2));
 ?>
 </body>

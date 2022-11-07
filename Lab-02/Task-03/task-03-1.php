@@ -13,6 +13,7 @@ print_r($repeatNumbers);
 <?php
 function findRepeatNumbers($numbers)
 {
+    // Цей алгоритм можна сильно спростити використовуючи цикл foreach і функцію in_array
     $repeatNumbers = array();
     $isNumberInArray = false;
     for ($i = 0; $i < count($numbers) - 1; $i++) {
