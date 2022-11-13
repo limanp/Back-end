@@ -14,6 +14,7 @@
     <div class="inputs">
         <input name="text" placeholder="текст">
         <input name="find" placeholder="знайти">
+        <input name="replace" placeholder="замінити">
         <input name="result" placeholder="результат">
     </div>
 </form>
