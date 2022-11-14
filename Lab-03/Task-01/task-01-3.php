@@ -11,7 +11,7 @@
 <?php
 $filePath = 'D:\WebServers\home\testsite\www\myfile.txt';
 $fileName = findFileName($filePath, '\\');
-echo $fileName;
+echo "File name: $fileName";
 ?>
 </body>
 </html>
