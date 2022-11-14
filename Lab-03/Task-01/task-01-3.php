@@ -19,7 +19,9 @@ echo "File name: $fileName";
 <?php
 function findFileName($filePath, $separator)
 {
-    $position = mb_strrpos($filePath, $separator) + 1;
-    return mb_substr($filePath, $position);
+    $start = mb_strrpos($filePath, $separator) + 1;
+    $length = mb_strrpos($filePath, '.') - $start;
+
+    return mb_substr($filePath, $start, $length);
 }
 ?>
