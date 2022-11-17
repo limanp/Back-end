@@ -1,6 +1,6 @@
 # Description of tasks
 - Task-02: Ceate a text document named indes.php.  
-Create the first program that outputs text:
+Create the first program that outputs text:  
   ![task-2 image](https://github.com/limanp/Back-end/blob/12b1885bbfeef735536740e40c511a8dee936331/Lab-01/taskTwoImage.png)
 - Task-03: Write a program that converts hryvnias into dollars. The following should appear as a result:  
 *Example:* 1500 hryvnias redeemable for $51.
