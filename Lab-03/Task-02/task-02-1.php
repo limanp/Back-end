@@ -9,20 +9,35 @@
 </head>
 <body>
 <?php
-$month = ["01" => "Січень", "02" => "Лютий", "03" => "Березень", "04" => "Квітень", "05" => "Травень",
-    "06" => "Червень", "07" => "Липень", "08" => "Серпень", "09" => "Вересень", "10" => "Жовтень",
-    "11" => "Листопад", "12" => "Грудень",];
+$months = [1 => "Січень", "Лютий", "Березень", "Квітень", "Травень",
+    "Червень", "Липень", "Серпень", "Вересень", "10" => "Жовтень",
+    "Листопад", "Грудень",];
 ?>
-<label>
-    <select name="number">
-        <option value="1" selected>1</option>
-    </select>
-    <select name="month">
-
-    </select name="year">
-    <select>
-
-    </select>
-</label>
+<form>
+    <label>
+        <select name="number">
+            <?php
+            for($i = 1; $i <= 31; $i++) {
+                echo "<option value='$i'" . ($i === (int)date("d") ? "selected" : "") . ">$i</option>";
+            }
+            ?>
+        </select>
+        <select name="month">
+            <?php
+            foreach($months as $key => $value) {
+                echo "<option value='$key'" . ($key === (int)date("m") ? "selected" : "") . ">$value</option>";
+            }
+            ?>
+        </select>
+        <select name="year">
+            <?php
+            for($i = 1970; $i <= (int)date("Y"); $i++) {
+                echo "<option value='$i'". ($i === (int)date("Y") ? "selected" : "") . ">$i</option>";
+            }
+            ?>
+        </select>
+    </label>
+    <input type="submit">
+</form>
 </body>
 </html>
