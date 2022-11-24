@@ -43,10 +43,10 @@ function wordsOccurMoreTwice($words1, $words2)
 }
 
 // ---------------- Запис з файлу у масив ----------------
-$wordsStr = file_get_contents("words/words1.txt");
-$fileWords1 = explode(" ", $wordsStr);
-$wordsStr = file_get_contents("words/words2.txt");
-$fileWords2 = explode(" ", $wordsStr);
+$getWords = file_get_contents("words/words1.txt");
+$fileWords1 = explode(" ", $getWords);
+$getWords = file_get_contents("words/words2.txt");
+$fileWords2 = explode(" ", $getWords);
 
 // ---------------- Визов функцій ----------------
 wordsOnlyFirstFile($fileWords1, $fileWords2);
