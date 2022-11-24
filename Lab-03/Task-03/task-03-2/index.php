@@ -10,9 +10,9 @@
 <body>
 <?php
 
-function wordsOnlyFirst($words1, $words2) : array
+function wordsOnlyFirst($words1, $words2) : string
 {
-    $result = [];
+    $result = "";
     $isMatch = false;
     foreach($words1 as $value1) {
         foreach($words2 as $value2) {
@@ -21,21 +21,22 @@ function wordsOnlyFirst($words1, $words2) : array
                 break;
         }
         if(!$isMatch)
-            $result[] = $value1;
+            $result .= $value1 . " ";
 
     }
     return $result;
 }
 
-$wordsStr1 = file_get_contents("words/words1.txt");
-$wordsArr1 = explode(" ", $wordsStr1);
+$wordsStr = file_get_contents("words/words1.txt");
+$wordsArr1 = explode(" ", $wordsStr);
 
-$wordsStr2 = file_get_contents("words/words2.txt");
-$wordsArr2 = explode(" ", $wordsStr2);
+$wordsStr = file_get_contents("words/words2.txt");
+$wordsArr2 = explode(" ", $wordsStr);
 
+$wordsOnlyFirstFile = fopen("result/OnlyFirstFile.txt", "w") or die("Не вдалося відкрити файл");
+fwrite($wordsOnlyFirstFile, wordsOnlyFirst($wordsArr1, $wordsArr2));
+fclose($wordsOnlyFirstFile);
 
-
-print_r(wordsOnlyFirst($wordsArr1, $wordsArr2));
 
 ?>
 </body>
