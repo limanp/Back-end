@@ -23,26 +23,23 @@
 <?php
 function deleteFile($dir)
 {
-    if (is_dir($dir))
-    {
-        echo "current dir = $dir<br>";
-        if ($dh = opendir($dir))
-        {
-            while (($file = readdir($dh)) !== false)
-            {
-                if($file=='.' || $file=='..') continue;
-                if(is_dir("$dir/$file"))
-                {
-                    echo "this is dir = $dir - $file<br>";
+    if (is_dir($dir)) {
+        if ($dh = opendir($dir)) {
+            while (($file = readdir($dh)) !== false) {
+                if ($file == '.' || $file == '..') continue;
+                if (is_dir("$dir/$file"))
                     deleteFile("$dir/$file");
-                }
-                else echo "this is file = $file<br>";
+                else
+                    if (!unlink("$dir/$file")) {
+                        echo "Помилка вилучення файлу!";
+                        return;
+                    }
             }
             closedir($dh);
         }
-    }
+        if (!rmdir($dir)) echo "Помилка вилучення каталогу!";
+    } else if (!unlink($dir)) echo "Помилка вилучення файлу!";
 }
-
 $login = $_GET["login"];
 $password = $_GET["password"];
 
