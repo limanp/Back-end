@@ -8,29 +8,32 @@
     <title>Task-04</title>
 </head>
 <body>
-    <form>
-        <label>
-            <input name="login" placeholder="Логін">
-            <input type="password" name="password" placeholder="Пароль">
-        </label>
-        <input type="submit">
-    </form>
+<a href="delete.php">Перейти до вилучення</a>
+<form>
+    <h3>Ведіть данні для створення</h3>
+    <label>
+        <input name="login" placeholder="Логін">
+        <input type="password" name="password" placeholder="Пароль">
+    </label>
+    <input type="submit" value="Відправити">
+</form>
 </body>
 </html>
 
 <?php
-function userCreate($login, $password) {
-    if(!mkdir($login)) {
+function userCreate($login, $password)
+{
+    if (!mkdir($login)) {
         echo "Помилка при створенні кататогу користувача $login";
         return;
     }
     $catalogs = ["video", "music", "photo"];
-    foreach($catalogs as $value) {
-        if(!mkdir("$login/$value")) {
+    foreach ($catalogs as $value) {
+        if (!mkdir("$login/$value")) {
             echo "Помилка при створенні кататогу $value";
             break;
         }
-        for($i = 1; $i <= 3; $i++)
+        for ($i = 1; $i <= 3; $i++)
             file_put_contents("$login/$value/$value$i", "This is my $value$i");
     }
 }
@@ -38,9 +41,8 @@ function userCreate($login, $password) {
 $login = $_GET["login"];
 $password = $_GET["login"];
 
-if($login != "" && !is_null($login))
+if ($login != "" && !is_null($login))
     userCreate($login, $password);
-
 
 
 ?>
