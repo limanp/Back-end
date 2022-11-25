@@ -26,12 +26,13 @@ function userCreate($login, $password) {
     }
     $catalogs = ["video", "music", "photo"];
     foreach($catalogs as $value) {
-        if(!mkdir("$login/$value"))
+        if(!mkdir("$login/$value")) {
             echo "Помилка при створенні кататогу $value";
+            break;
+        }
+        for($i = 1; $i <= 3; $i++)
+            file_put_contents("$login/$value/$value$i", "This is my $value$i");
     }
-
-
-
 }
 
 $login = $_GET["login"];
