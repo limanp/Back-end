@@ -19,7 +19,7 @@
             max-width: 300px;
         }
         body {
-            font-family: Calibri;
+            font-family: Calibri, serif;
         }
     </style>
 </head>
@@ -58,10 +58,10 @@
             $games .= $value . "<br>";
         }
         $_SESSION["games"] = $_POST["games"];
-    }
+    } else $_SESSION["games"] = [];
     if (isset($_POST["aboutMe"])) {
         $aboutMe = nl2br($_POST["aboutMe"]);
-        $_SESSION["aboutMe"] = $aboutMe;
+        $_SESSION["aboutMe"] = $_POST["aboutMe"];
     }
     if ($_FILES && $_FILES["image"]["error"]==UPLOAD_ERR_OK) {
         $fileName = "images/" . $_FILES["image"]["name"];
