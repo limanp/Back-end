@@ -8,12 +8,12 @@
     <title>Task-04</title>
 </head>
 <body>
-<form method="post">
+<form action="user.php" method="post" enctype="multipart/form-data">
     <label>
         <table>
             <tr>
                 <td>Логін:</td>
-                <td><input name="login"/></td>
+                <td><input type="text" name="login"/></td>
             </tr>
             <tr>
                 <td>Пароль:</td>
@@ -33,7 +33,7 @@
             <tr>
                 <td>Місто:</td>
                 <td>
-                    <select>
+                    <select name="city">
                         <option value="Житомир">Житомир</option>
                         <option value="Звягель">Звягель</option>
                         <option value="Київ">Київ</option>
@@ -44,11 +44,11 @@
             <tr>
                 <td>Улюблены гри:</td>
                 <td>
-                    <input type="checkbox" name="games" value="футбол">футбол<br>
-                    <input type="checkbox" name="games" value="баскетбол">баскетбол<br>
-                    <input type="checkbox" name="games" value="волейбол">волейбол<br>
-                    <input type="checkbox" name="games" value="шахи">шахи<br>
-                    <input type="checkbox" name="games" value="World of Tanks">World of Tanks<br>
+                    <input type="checkbox" name="games[]" value="футбол">футбол<br>
+                    <input type="checkbox" name="games[]" value="баскетбол">баскетбол<br>
+                    <input type="checkbox" name="games[]" value="волейбол">волейбол<br>
+                    <input type="checkbox" name="games[]" value="шахи">шахи<br>
+                    <input type="checkbox" name="games[]" value="World of Tanks">World of Tanks<br>
                 </td>
             </tr>
             <tr>
