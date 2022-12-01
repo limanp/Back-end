@@ -13,16 +13,19 @@
     </style>
 </head>
 <body>
+<?php
+session_start();
+?>
 <form action="user.php" method="post" enctype="multipart/form-data">
     <label>
         <table>
             <tr>
                 <td>Логін:</td>
-                <td><input type="text" name="login"/></td>
+                <td><input type="text" name="login" value='<?php echo $_SESSION["login"];?>' /></td>
             </tr>
             <tr>
                 <td>Пароль:</td>
-                <td><input type="password" name="password"></td>
+                <td><input type="password" name="password" value='<?php echo $_SESSION["password"];?>' /></td>
             </tr>
             <tr>
                 <td>Пароль(ще раз):</td>

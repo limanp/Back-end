@@ -26,7 +26,11 @@
 <body>
 <table>
     <?php
-    if (isset($_POST["login"])) $login = $_POST["login"];
+    session_start();
+    if (isset($_POST["login"])) {
+        $login = $_POST["login"];
+        $_SESSION["login"] = $login;
+    }
     if (isset($_POST["password"]) && isset($_POST["passwordRepeat"])) {
         $password = $_POST["password"];
         $passwordRepeat = $_POST["passwordRepeat"];
@@ -37,16 +41,28 @@
         $passwordVerification = $password === $passwordRepeat ?
             "співпадає" :
             "не співпадає (перший - $passwordLen символв, другий - $passwordRepeatLen символів)";
+        $_SESSION["password"] = $password;
+        $_SESSION["passwordRepeat"] = $passwordRepeat;
     }
-    if (isset($_POST["gender"])) $gender = $_POST["gender"];
-    if (isset($_POST["city"])) $city = $_POST["city"];
+    if (isset($_POST["gender"])) {
+        $gender = $_POST["gender"];
+        $_SESSION["gender"] = $gender;
+    }
+    if (isset($_POST["city"])) {
+        $city = $_POST["city"];
+        $_SESSION["city"] = $city;
+    }
     if (isset($_POST["games"])) {
         $games = "";
         foreach ($_POST["games"] as $value) {
             $games .= $value . "<br>";
         }
+        $_SESSION["games"] = $_POST["games"];
     }
-    if (isset($_POST["aboutMe"])) $aboutMe = nl2br($_POST["aboutMe"]);
+    if (isset($_POST["aboutMe"])) {
+        $aboutMe = nl2br($_POST["aboutMe"]);
+        $_SESSION["aboutMe"] = $aboutMe;
+    }
     if ($_FILES && $_FILES["image"]["error"]==UPLOAD_ERR_OK) {
         $fileName = "images/" . $_FILES["image"]["name"];
         move_uploaded_file($_FILES["image"]["tmp_name"], $fileName);
