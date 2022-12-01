@@ -12,6 +12,15 @@
             text-align: right;
             vertical-align: top;
         }
+        table {
+            border-spacing: 5px;
+        }
+        img {
+            max-width: 300px;
+        }
+        body {
+            font-family: Calibri;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +46,11 @@
             $games .= $value . "<br>";
         }
     }
-    //if (isset($_POST[]))
+    if (isset($_POST["aboutMe"])) $aboutMe = nl2br($_POST["aboutMe"]);
+    if ($_FILES && $_FILES["image"]["error"]==UPLOAD_ERR_OK) {
+        $fileName = "images/" . $_FILES["image"]["name"];
+        move_uploaded_file($_FILES["image"]["tmp_name"], $fileName);
+    }
     echo "
 <tr>
     <td>Логін:</td>
@@ -52,7 +65,7 @@
     <td>$gender</td>
 </tr>
 <tr>
-    <td>Місто</td>
+    <td>Місто:</td>
     <td>$city</td>
 </tr>
 <tr>
@@ -61,14 +74,15 @@
 </tr>
 <tr>
     <td>Про себе:</td>
-    <td></td>
+    <td>$aboutMe</td>
 </tr>
 <tr>
     <td>Фотографія:</td>
-    <td></td>
+    <td><img src=$fileName alt='image'></td>
 </tr>
 ";
     ?>
 </table>
+<a href="index.php">Повернутися на головну сторінку</a>
 </body>
 </html>

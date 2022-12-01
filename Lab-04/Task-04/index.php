@@ -6,6 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task-04</title>
+    <style>
+        body {
+            font-family: Calibri;
+        }
+    </style>
 </head>
 <body>
 <form action="user.php" method="post" enctype="multipart/form-data">
@@ -57,7 +62,7 @@
             </tr>
             <tr>
                 <td>Фотографія</td>
-                <td><input type="file"></td>
+                <td><input type="file" name="image"></td>
             </tr>
             <tr>
                 <td></td>
